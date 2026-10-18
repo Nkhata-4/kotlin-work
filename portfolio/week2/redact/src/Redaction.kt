@@ -1,6 +1,6 @@
 // COMP2850 Portfolio: Week 2
 // Function to redact sensitive information in a string
-fun redact(args: Array<String>) {
+fun redact(args: Array<String>): String {
     val text = args[0]
     val redactPart = args[1]
     val redactChar = args[2]
