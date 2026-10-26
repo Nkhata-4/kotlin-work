@@ -24,7 +24,7 @@ fun triangleArea(triangle: Triangle): Double {
         return area
     }
     else if (x == 0.0) {
-        throw IllegalArgumentException("Invalid triangel side lengths")
+        throw IllegalArgumentException("Invalid triangle side lengths")
     }
     else {
         throw IllegalArgumentException("Invalid triangle side lengths")
