@@ -18,7 +18,16 @@ fun isValidTriangle(triangle: Triangle): Boolean {
 fun triangleArea(triangle: Triangle): Double {
     val (a, b, c) = triangle
     val s = (a + b + c) / 2
-    val area = Math.sqrt(s * (s - a) * (s - b) * (s - c))
-    return area if area > 0 else 0.0
+    val x = s * (s - a) * (s - b) * (s - c)
+    val area = Math.sqrt(x)
+    if (x > 0.0) {
+        return area
+    }
+    else if (x == 0.0) {
+        return 0.0
+    }
+    else {
+        return Double.NaN
+    }
 } 
 
