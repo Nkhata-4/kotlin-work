@@ -1,13 +1,22 @@
+import kotlin.math.*
+
+
 fun median(args: List): Double {
     val sortedlist = args.sorted()
-    val size = sortedlist.size()
+    val quant = sortedlist.size
+    val z = quant / 2
 
-    if (size == 0) {
+    if (quant == 0) {
         throw IllegalArgumentException("List cannot be empty")
-    } else if (size % 2 == 0) {
-        val median = (sortedlist[size / 2 - 1] + sortedlist[size / 2]) / 2.0
-    } else {
-        val median = sortedlist[size / 2].toDouble()
+    } else if (quant % 2 == 0) {
+        val x = sortedlist[z] + sortedlist[z - 1]
+        val y = x / 2
+        val ans = y.toDouble()
+        return ans
+    } 
+    else {
+        val x = sortedlist[z.ceil()]
+        val ans = x
+        return ans
     }
-    return median
 }
