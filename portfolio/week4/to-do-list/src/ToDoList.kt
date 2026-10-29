@@ -58,18 +58,27 @@ class ToDoList() {
     fun getItems(status: ItemStatus? = null): List<ToDoItem> {
         // Write code here to return a list of items with the matching
         // status, or a list of all items if status argument is null
-        if (status != null) {
-            return items.filter { it.status == status }
+        if (status == ItemStatus.Done) {
+            return items.filter { it.status == ItemStatus.Done }
+        }
+        else if (status == ItemStatus.InProgress) {
+            return items.filter { it.status == ItemStatus.InProgress }
+        }
+        else if (status == ItemStatus.NotStarted) {
+            return items.filter { it.status == ItemStatus.NotStarted }
         }
         else {
             return items
         }
-        return emptyList()
     }
-
     fun getItemsDueOn(date: LocalDate): List<ToDoItem> {
         // Write code here to return a list of items
         // that are due on the specified date
+
         return items.filter { it.dueDate == date }
     }
 }
+//loading files
+//overdue
+//completed tasks
+
