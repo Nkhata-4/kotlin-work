@@ -3,16 +3,15 @@
 
 import kotlin.math.sqrt
 
-typealias Triangle = Triple<Double,Double,Double>
+//typealias Triangle = Triple<Double,Double,Double>
 
 class Triangle {
 
-    val a: Double
-    val b: Double
-    val c: Double
+    var a: Double
+    var b: Double
+    var c: Double
 
-    fun isValidTriangle(triangle: Triangle): Boolean {
-        //val (a, b, c) = triangle
+    fun isValidTriangle(): Boolean {
         if ((a + b > c) && (a + c > b) && (b + c > a)) {
             return true
         } 
@@ -21,7 +20,6 @@ class Triangle {
         }
     }
     fun perimeter(): Double {
-        //val (a, b, c) = triangle
         perimeter = a + b + c
         return perimeter
     }
@@ -30,7 +28,7 @@ class Triangle {
         return perimeter / 2
     }
 
-    fun triangleArea(triangle: Triangle): Double {
+    fun triangleArea(): Double {
         val s = (a + b + c) / 2
         val x = s * (s - a) * (s - b) * (s - c)
         val area = Math.sqrt(x)
