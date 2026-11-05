@@ -2,11 +2,8 @@
 
 class SavingsAccount(val rate: Double): BankAccount("yanjani") {
 
-    init {
-        require(rate > 0.0) {"Interest should be greater than 0.0"}
-    }
-
     fun applyInterest(rate: Double) {
+        require(rate > 0.0) {"Interest should be greater than 0.0"}
         val multiplier = (rate / 100) + 1
         val amount = balance * multiplier
         BankAccount.deposit(amount)
