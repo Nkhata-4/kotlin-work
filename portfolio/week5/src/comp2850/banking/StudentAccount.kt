@@ -6,7 +6,7 @@ class StudentAccount(overdraft: Int) : BankAccount(holder) {
         set(value) {
             field = value
         }
-        require(value >= 100) { throw IllegalArgumentException("Overdraft limit must be in range 0 - 100") }
+        require(overdraft <= 100) { throw IllegalArgumentException("Overdraft limit must be in range 0 - 100") }
     
     abstract fun withdrawalsAllowed(): Boolean {
         if (balance - amount < -overdraft) {
