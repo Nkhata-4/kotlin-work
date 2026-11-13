@@ -78,7 +78,5 @@ class ToDoList() {
         return items.filter { it.dueDate == date }
     }
 }
-//loading files
-//overdue
-//completed tasks
+
 
